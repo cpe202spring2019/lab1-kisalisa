@@ -1,5 +1,6 @@
-aimport unittest
+import unittest
 from lab1 import *
+import lab1
 
  # A few test cases.  Add more!!!
 class TestLab1(unittest.TestCase):
@@ -18,6 +19,9 @@ class TestLab1(unittest.TestCase):
         low = 0
         high = len(list_val)-1
         self.assertEqual(bin_search(4, 0, len(list_val)-1, list_val), 4 )
+
+assert max_list_iter([1, 2, 3]) == 3
+
 
 if __name__ == "__main__":
         unittest.main()
