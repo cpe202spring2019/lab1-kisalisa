@@ -4,6 +4,10 @@
 # Instructor: Paul Hatalsky
 # Term: Spring 2019
 
+
+import numpy
+
+
 class Location:
     def __init__(self, name, lat, lon):
         self.name = name    # string for name of location
@@ -12,21 +16,12 @@ class Location:
     
 
     def __eq__(self, name):
-        return self.lat == name.lat and self.lon == name.lon
+        return type(name) is Location and numpy.isclose(self.lat, name.lat) and numpy.isclose(self.lon, name.lon)
 
 
     def __repr__(self):
         return "Location('" + self.name + "'" + ", " + str(self.lat) + ", " + str(self.lon) +")"
 
-<<<<<<< HEAD
-=======
-    def __eq__(self, name):
-        return self.lat == name.lat and self.lon == name.lon
-
-
-    def __repr__(self):
-        return "Location('" + self.name + "'" + ", " + str(self.lat) + ", " + str(self.lon) +")"
->>>>>>> fe33ac15110ef3f2ff4503f54501833c2e10f116
 
 def main():
     loc1 = Location("SLO", 35.3, -120.7)
