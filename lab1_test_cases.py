@@ -36,7 +36,8 @@ class TestLab1(unittest.TestCase):
 
 
     def test_bin_search(self):
-        """docstring here """
+        """tests bin_search for item not found, exception, item at middle of list, item at beginning,
+           and item at end"""
         list_val =[0,1,2,3,4,7,8,9,10]
         low = 0
         high = len(list_val) - 1
