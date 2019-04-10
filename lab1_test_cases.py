@@ -6,7 +6,9 @@ import lab1
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
-        """add description here"""
+        """tests max_list_iter for lists with unique values, duplicates,
+           empty lists, and for max values in the last, first, middle, and 
+           when a list is None"""
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
@@ -21,21 +23,28 @@ class TestLab1(unittest.TestCase):
         
 
     def test_reverse_rec(self):
+        """tests reverse_rec for exception, for random list lengths, if the list
+           is empty, and if it has one value"""
         tlist = None
         with self.assertRaises(ValueError):
             reverse_rec(tlist)
         self.assertEqual(reverse_rec([1,2,3]), [3,2,1])
+        self.assertEqual(reverse_rec([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1])
+        self.assertEqual(reverse_rec([0, 9, 8, 7, 6]), [6, 7, 8, 9, 0])
         self.assertEqual(reverse_rec([]), None)
         self.assertEqual(reverse_rec([1]), [1])
 
 
     def test_bin_search(self):
+        """docstring here """
         list_val =[0,1,2,3,4,7,8,9,10]
         low = 0
-        high = len(list_val)-1
+        high = len(list_val) - 1
         self.assertEqual(bin_search(4, 0, len(list_val) - 1, list_val), 4)
         self.assertEqual(bin_search(0, 0, 2, [0, 1, 2]), 0)
         self.assertEqual(bin_search(1, 0, 0, [0, 0, 0]), None)
+        self.assertEqual(bin_search(1, 0, 2, [0, 1, 2]), 1)
+        self.assertEqual(bin_search(2, 0, 2, [0, 1, 2]), 2)
         tlist = None
         with self.assertRaises(ValueError):
             bin_search(2, 3, 1, tlist)
