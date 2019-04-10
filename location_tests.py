@@ -1,3 +1,10 @@
+# Name: Lisa Li
+# Assignment: Lab 1
+# Course: Gaming 202
+# Instructor: Paul Hatalsky
+# Term: Spring 2019 
+
+
 import unittest
 from location import *
 
