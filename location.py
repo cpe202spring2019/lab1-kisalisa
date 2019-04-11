@@ -16,7 +16,7 @@ class Location:
     
 
     def __eq__(self, name):
-        return type(name) is Location and isclose(self.lat, name.lat) and isclose(self.lon, name.lon)
+        return type(name) is Location and isclose(self.lat, name.lat) and isclose(self.lon, name.lon) and self.name == name.name
 
 
     def __repr__(self):

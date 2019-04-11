@@ -51,6 +51,8 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(1, 0, 2, [0, 1, 2]), 1)
         self.assertEqual(bin_search(2, 0, 2, [0, 1, 2]), 2)
         self.assertEqual(bin_search(-2, 0, 2, [-2, 0, 2]), 0)
+        self.assertEqual(bin_search(0, 0, 0, []), None)
+        self.assertEqual(bin_search(0, 0, 0, [0]), 0)
         tlist = None
         with self.assertRaises(ValueError):
             bin_search(2, 3, 1, tlist)
