@@ -44,15 +44,19 @@ class TestLab1(unittest.TestCase):
         list_val =[0,1,2,3,4,7,8,9,10]
         low = 0
         high = len(list_val) - 1
-        self.assertEqual(bin_search(4, 0, len(list_val) - 1, list_val), 4)
-        self.assertEqual(bin_search(10, 0, 10, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
-        self.assertEqual(bin_search(0, 0, 2, [0, 1, 2]), 0)
-        self.assertIsNone(bin_search(1, 0, 2, [0, 0, 0]))
-        self.assertEqual(bin_search(1, 0, 2, [0, 1, 2]), 1)
-        self.assertEqual(bin_search(2, 0, 2, [0, 1, 2]), 2)
-        self.assertEqual(bin_search(-2, 0, 2, [-2, 0, 2]), 0)
-        self.assertEqual(bin_search(0, 0, 0, []), None)
-        self.assertEqual(bin_search(0, 0, 0, [0]), 0)
+        self.assertEqual(bin_search(4, 0, len(list_val) - 1, list_val), 4) # item at middle
+        self.assertEqual(bin_search(10, 0, 10, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10) # item at end
+        self.assertEqual(bin_search(0, 0, 2, [0, 1, 2]), 0) # item at beginning
+        self.assertIsNone(bin_search(1, 0, 2, [0, 0, 0])) # item not in list
+        self.assertEqual(bin_search(1, 0, 2, [0, 1, 2]), 1) # item in middle 
+        self.assertEqual(bin_search(2, 0, 2, [0, 1, 2]), 2) # item at end
+        self.assertEqual(bin_search(-2, 0, 2, [-2, 0, 2]), 0) # item with negative values
+        self.assertIsNone(bin_search(0, 0, 0, [])) # empty list
+        self.assertEqual(bin_search(0, 0, 0, [0]), 0) # one item list
+        self.assertIsNone(bin_search(1, 6, 2, list_val)) # low > high
+        self.assertIsNone(bin_search(1, 2, 4, list_val)) # val not in list range
+        self.assertIsNone(bin_search(4, 10, 11, list_val)) # low, high not in list
+        self.assertIsNone(bin_search(4, 0, 0, [0]))
         tlist = None
         with self.assertRaises(ValueError):
             bin_search(2, 3, 1, tlist)
