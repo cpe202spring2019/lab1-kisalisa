@@ -31,7 +31,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(reverse_rec([1,2,3]), [3,2,1])
         self.assertEqual(reverse_rec([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1])
         self.assertEqual(reverse_rec([0, 9, 8, 7, 6]), [6, 7, 8, 9, 0])
-        self.assertEqual(reverse_rec([]), None)
+        self.assertEqual(reverse_rec([]), [])
         self.assertEqual(reverse_rec([1]), [1])
 
 
