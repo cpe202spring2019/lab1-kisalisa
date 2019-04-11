@@ -5,7 +5,7 @@
 # Term: Spring 2019
 
 
-import numpy
+from math import *
 
 
 class Location:
@@ -16,7 +16,7 @@ class Location:
     
 
     def __eq__(self, name):
-        return type(name) is Location and numpy.isclose(self.lat, name.lat) and numpy.isclose(self.lon, name.lon)
+        return type(name) is Location and isclose(self.lat, name.lat) and isclose(self.lon, name.lon)
 
 
     def __repr__(self):
